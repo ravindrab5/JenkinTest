@@ -1,15 +1,15 @@
 pipeline {
     agent any
     stages {
-      stage('SCM Checkout'){
+      stage('SCM Checkout') {
 	  steps {
-           git clone "https://github.com/ravindrab5/JenkinTest.git"
-		 }
+            git clone "https://github.com/ravindrab5/JenkinTest.git"
+          }
        }
       stage('Compile stage') {
          steps {
-            withMaven(maven:'LOCALMAVEN'){
-               sh 'mvn clean compile'
+            withMaven(maven:'LOCALMAVEN') {
+               sh 'mvn compile'
             }
          }
       }
