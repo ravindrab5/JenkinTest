@@ -6,8 +6,8 @@ pipeline {
        }
       stage('Compile stage'){
          steps{
-            WITHMAVEN(MAVEN:'LocalMaven'){
-               SH 'mvn clean compile'
+            WITHMAVEN(MAVEN:'LOCALMAVEN'){
+               SH 'MVN clean compile'
             }
          }
       }
