@@ -13,5 +13,26 @@ pipeline {
             }
          }
       }
+     stage('Test stage') {
+         steps {
+            withMaven(maven:'LOCALMAVEN') {
+               sh 'mvn test'
+            }
+         }
+      }
+      stage('install stage') {
+         steps {
+            withMaven(maven:'LOCALMAVEN') {
+               sh 'mvn install'
+            }
+         }
+      }
+     stage('package stage') {
+         steps {
+            withMaven(maven:'LOCALMAVEN') {
+               sh 'mvn package'
+            }
+         }
+      }
    } 
   }
